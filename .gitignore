@@ -1,0 +1,5 @@
+cmake-build-debug/
+data_raw/
+
+.idea/
+.idea/Advent-of-Code.iml
