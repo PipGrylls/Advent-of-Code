@@ -9,7 +9,6 @@ add_subdirectory(libs/get_cookie)
 add_subdirectory(days/report_repair)
 
 
-
 # Find Package gets the target see here for list
 # https://cmake.org/cmake/help/latest/manual/cmake-modules.7.html#find-modules
 find_package(CURL)
@@ -25,6 +24,7 @@ target_link_libraries(Advent-of-Code
         ${PROJECT_SOURCE_DIR}/libs/get_cookie
         ${CURL_LIBRARIES})
 
+# add the binary tree so that the codes can see and use the header files
 target_include_directories(Advent-of-Code PUBLIC
         "${PROJECT_BINARY_DIR}"
         "${PROJECT_SOURCE_DIR}/libs/get_cookie"
