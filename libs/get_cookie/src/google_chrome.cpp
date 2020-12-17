@@ -41,7 +41,7 @@ int get_cookie(const char *data) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
     } else {
-        fprintf(stdout, "Operation done successfully\n");
+        fprintf(stdout, "Cookie grabbed successfully\n");
     }
     sqlite3_close(db);
     return 0;

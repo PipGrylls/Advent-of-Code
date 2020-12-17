@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.10)
-
-project(get_cookie VERSION 1.0)
+project(get_cookie)
 
 include_directories(src)
 
-add_executable(get_cookie
-       src/google_chrome.cpp)
+add_library(get_cookie
+        src/google_chrome.cpp get_cookie.h)
+target_include_directories(get_cookie PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR})

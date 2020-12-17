@@ -1,10 +1,11 @@
 /* Day 1 of Advent of code challenge 1 by PJG */
 #include <iostream>
-#include "get_cookie.h"
 
 #include <cstdio>
 #include <cstring>
 #include <cstdio>
+
+//#include "get_cookie.h"
 #include <curl/curl.h>
 using namespace std;
 
@@ -23,7 +24,7 @@ int main(void)
     FILE *fp;
     CURLcode res;
 
-
+    //get_cookie(data_url);
 
     curl = curl_easy_init();
     if (curl) {

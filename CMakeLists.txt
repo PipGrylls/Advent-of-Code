@@ -1,31 +1,7 @@
-# Set the minimum CMake version requirment
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.1.0)
 
-# Name the project and add a version
-project(Advent-of-Code VERSION 1.0)
+project(Advent_of_Code)
 
-# Add the subdirectories to the project libs is used for custom libraries days are the daily challenges
+add_subdirectory(third_party/curl)
 add_subdirectory(libs/get_cookie)
 add_subdirectory(days/report_repair)
-
-
-# Find Package gets the target see here for list
-# https://cmake.org/cmake/help/latest/manual/cmake-modules.7.html#find-modules
-find_package(CURL)
-# add the found packages project files to the build
-include_directories(${CURL_INCLUDE_DIRS})
-
-# add the program executable to the build (name path/to/script.cpp)
-add_executable(Advent-of-Code
-        days/report_repair/src/rr.cpp)
-
-# link the project libaries to the executables and the package libraries
-target_link_libraries(Advent-of-Code
-        ${PROJECT_SOURCE_DIR}/libs/get_cookie
-        ${CURL_LIBRARIES})
-
-# add the binary tree so that the codes can see and use the header files
-target_include_directories(Advent-of-Code PUBLIC
-        "${PROJECT_BINARY_DIR}"
-        "${PROJECT_SOURCE_DIR}/libs/get_cookie"
-        )
